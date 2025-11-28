@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== TOÀN TRANG ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    background: #f7f7f7;
+    color: #222222;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/* Background variants for hero (per-page) */
+.hero {
+    width: 300px;             /* chỉnh kích thước nhỏ lại */
+    height: 200px;
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-f_SHu7r322suS1CQg75nzvWXAxdCk7HJm9mCcksksPp-Zk3KyJ9kENOqUjHhfYyokpv-sawPFP_HtW9dkmXtPwbWWCfiLw1VQ_YPJo_S0XwiqbgF5_DRwIN_uEASWzqc_flCFBJeku6R0OYMAL4UDLaTOM6TxCszncEE_FRp1M1pKA-0VwDq7wNop7lQ0-TJ2tjEluRpqCxIxnYUz5KklyuS56tDWNh4wbg8P7eNP1KocdanjGnZYI-PORqPx8mIC3kL0c6lSmo');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;      /* bo góc */
+    overflow: hidden;         /* để bo góc có hiệu lực */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(58, 59, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(42, 252, 133, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e6e9f0;
+    text-decoration: none;
+}
+
+logo-icon {
+    font-size: 1.8rem;
+    color: #2afc3f;
+}
+
+.logo-text {
+    background: linear-gradient(90deg, #e6e9f0 0%, #2efc2a 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #c2c6d3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #2afc3f;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2afc3f;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #e6e9f0;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #f1f1f1;
+    color: #222222;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* ===== HIỆU ỨNG CHUNG ===== */
+body {
+    animation: fadeIn 0.7s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== RESPONSIVE CHUNG ===== */
+@media (max-width: 768px) {
+    header h1 { font-size: 22px; }
+    nav a { font-size: 15px; padding: 6px 10px; }
+}
+
+/* ===== THANH LIÊN HỆ ===== */
+.contact-bar {
+    background-color: #6df35e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+/* ===== HIỆU ỨNG FADE-IN ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE CHUNG ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 100px 20px 40px;
+        gap: 40px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    opacity: 1;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 1.1s;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #181525 0%, #0c0f17 -100%);
+    color: #2afc3f;
+    font-size: 1.3rem ;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #0c0f17;
+    box-shadow: 0 8px 20px rgba(30, 215, 30, 0.3);
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 45deg, #2afc51, #2efc2a, #0aff6c);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+ 
+.social-icons a:hover::before {
+    opacity: 1;
+    animation: shine 0.5s forwards;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    max-width: 90%;
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 120px 40px 60px;
+    min-height: 500px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+}
+
+/* Background variants for hero (per-page) */
+.hero--index {
+    background-image: url('../images/gioithieu.jpg');
+}
+
+.hero--blog {
+    background-image: url('../images/blog.jpg');
+}
+
+/* ===== LAYOUT ===== */
+.hero .container {
+    display: flex;            
+    align-items: center;       
+    justify-content: space-between; 
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+#one {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+#two{
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+#three {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+.typing-text {
+    position: relative;
+    display: inline-block;
+    color: #2afc3f;
+}
+
+.typing-text::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 0.7s infinite;
+    color: #2afc3f;
+} 
+
+/* ===== Profile Picture ===== */
+
+ .profile-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.profile-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+    border: #0c0f17;
+    transition: all 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+

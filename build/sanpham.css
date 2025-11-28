@@ -1,0 +1,110 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.product {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.product h2 {
+    color: #2e7d32;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product p {
+    color: #555;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+/* Nút */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .product {
+        width: 90%;
+    }
+}
+
+/* ===== HIỆU ỨNG FADE-IN & HOVER ===== */
+.product {
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== NÚT MUA HÀNG & GIỎ ===== */
+button {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+button.buy {
+  background: linear-gradient(135deg, #81c784, #66bb6a);
+  box-shadow: 0 3px 8px rgba(76,175,80,0.3);
+}
+button.buy:hover {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  transform: translateY(-3px);
+}
+
+button.cart {
+  background: linear-gradient(135deg, #ffe082, #ffca28);
+  box-shadow: 0 3px 8px rgba(255,202,40,0.3);
+}
+button.cart:hover {
+  background: linear-gradient(135deg, #ffca28, #ffb300);
+  transform: translateY(-3px);
+}
+
+
+#giua {
+    text-align: center;
+    margin-top: 40px;
+    justify-content: center;
+}

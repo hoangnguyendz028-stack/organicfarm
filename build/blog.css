@@ -1,0 +1,80 @@
+main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.blog-post {
+    background-color: rgb(248, 252, 246);
+    padding: 25px 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.blog-post:nth-child(odd) {
+    background-color: #f7faf5;
+}
+
+.blog-post h2 {
+    color: #388e3c;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    background-color: #388e3c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .blog-post { width: 90%; }
+}
+/* ===== HIỆU ỨNG FADE-IN ===== */
+.blog-post {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HIỆU ỨNG ẢNH BLOG (NẾU CÓ) ===== */
+.blog-post img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+.blog-post img:hover {
+  transform: scale(1.03);
+}
+
+
